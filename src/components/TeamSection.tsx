@@ -1,11 +1,130 @@
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
+import { FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Abdullah } from "../assets";
+import { GoDotFill } from "react-icons/go";
 
-const TeamSection = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+interface TeamMember {
+  id: number;
+  name: string;
+  image?: string;
+  role: string;
+  description: string;
 }
 
-export default TeamSection
+const TeamSection: React.FC = () => {
+  const teamMembers: TeamMember[] = [
+    {
+      id: 1,
+      name: "Sarah Mitchell",
+      image: Abdullah,
+      role: "Marketing Strategist",
+      description: "With 8+ years in digital marketing, Sarah specializes in creating data-driven campaigns that deliver exceptional ROI for authors.",
+    },
+    {
+      id: 2,
+      name: "Marcus Chen",
+      image: Abdullah,
+      role: "Media Buyer",
+      description: "Marcus has managed over $2M in ad spend across Facebook, Amazon, and Google, consistently achieving 3-5x ROAS for book campaigns.",
+    },
+    {
+      id: 3,
+      name: "Emily Rodriguez",
+      image: Abdullah,
+      role: "Book PR Manager",
+      description: "Emily has secured features in major publications and podcasts for dozens of authors, amplifying their reach and credibility.",
+    },
+    {
+      id: 4,
+      name: "David Thompson",
+      image: Abdullah,
+      role: "Creative Designer",
+      description: "David creates stunning book covers, promotional graphics, and brand identities that capture attention and drive conversions.",
+    },
+  ];
+
+  return (
+    <section id="team" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+             <div className="text-[#d4af37] font-semibold tracking-wider uppercase text-sm flex items-center justify-center mb-4">
+                      <span className="">
+                      <GoDotFill />
+                      </span>
+                        TEAM
+                    </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Meet the Experts Behind Your Success
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Our dedicated team of marketing professionals brings decades of combined experience to help you achieve your publishing goals.
+          </p>
+        </motion.div>
+
+        {/* Team Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {teamMembers.map((member, index) => (
+            <motion.div
+              key={member.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              {/* Image Container with Hover Effect */}
+              <div className="mb-6 relative overflow-hidden rounded-xl">
+                {/* Black & White Image */}
+                {member.image && (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full object-cover"
+                  />
+                )}
+
+                {/* Color Reveal on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#d4af377a] to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Social Icons */}
+                <div className="absolute bottom-4 right-4 flex gap-2">
+                  <div className="bg-white p-2 rounded-full opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-2 transition-all duration-300 delay-100">
+                    <FaLinkedin className="text-[#d4af37] text-sm" />
+                  </div>
+                  <div className="bg-white p-2 rounded-full opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-2 transition-all duration-300 delay-150">
+                    <FaTwitter className="text-[#d4af37] text-sm" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Member Info */}
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 transition-colors duration-300">
+                  {member.name}
+                </h3>
+                <p className="text-[#d4af37] font-medium mb-4">
+                  {member.role}
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  {member.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+
+      </div>
+    </section>
+  );
+};
+
+export default TeamSection;

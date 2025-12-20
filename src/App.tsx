@@ -13,6 +13,10 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import ServicesSection from "./components/ServiceSection";
 import TeamSection from "./components/TeamSection";
+import AuthorsSection from "./components/AuthorSection";
+import ReviewsSection from "./components/ReviewSection";
+import ContactSection from "./components/ContactSection";
+import Footer from "./components/Footer";
 
 /**
  * Reusable animated section component.
@@ -236,17 +240,33 @@ const App: React.FC = () => {
           <About />
         </div>
       </AnimatedSection>
-      <AnimatedSection id="about" className="">
+      <AnimatedSection id="services" className="">
         <div className="">
           <ServicesSection />
         </div>
       </AnimatedSection>
-      <AnimatedSection id="about" className="">
+      <AnimatedSection id="team" className="">
         <div className="">
           <TeamSection />
         </div>
       </AnimatedSection>
+      <AnimatedSection id="authors" className="">
+        <div className="">
+          <AuthorsSection />
+        </div>
+      </AnimatedSection>
+      <AnimatedSection id="reviews" className="">
+        <div className="">
+          <ReviewsSection />
+        </div>
+      </AnimatedSection>
+      <AnimatedSection id="contact" className="">
+        <div className="">
+          <ContactSection />
+        </div>
+      </AnimatedSection>
 
+<Footer />
       {/* Continue with Services, Team, Authors, Reviews, Contact sections... */}
     </div>
   );
