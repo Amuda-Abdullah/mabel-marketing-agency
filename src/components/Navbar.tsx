@@ -57,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-around items-center">
+        <div className="flex justify-between items-center">
           {/* Logo */}
           <div
             onClick={() => {
@@ -80,11 +80,11 @@ const Navbar: React.FC<NavbarProps> = ({
                 className={`font-medium transition-colors duration-200 ${
                   isScrolled
                     ? activeSection === item.id
-                      ? "text-indigo-600 font-semibold"
-                      : "text-gray-700 hover:text-indigo-500"
+                      ? "text-[#d4af37] font-semibold"
+                      : "text-[#213448] hover:text-[#d4af37]"
                     : activeSection === item.id
                     ? "text-white font-semibold"
-                    : "text-white/90 hover:text-white"
+                    : "text-white/90 hover:text-[#d4af37] transition-colors duration-300 font-medium whitespace-nowrap cursor-pointer"
                 } cursor-pointer`}
               >
                 {item.label}
@@ -97,8 +97,8 @@ const Navbar: React.FC<NavbarProps> = ({
               }}
               className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
                 isScrolled
-                  ? "bg-indigo-600 hover:bg-indigo-700 text-white"
-                  : "bg-white text-indigo-600 hover:bg-white/90"
+                  ? "hidden lg:block bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-white px-8 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer"
+                  : "hidden lg:block bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-white px-8 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer"
               }`}
             >
               Get a Free Consultation

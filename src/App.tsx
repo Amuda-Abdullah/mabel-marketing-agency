@@ -11,6 +11,8 @@ import {
 import { FaAmazon, FaStar, FaUsers, FaBookOpen } from "react-icons/fa";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
+import ServicesSection from "./components/ServiceSection";
+import TeamSection from "./components/TeamSection";
 
 /**
  * Reusable animated section component.
@@ -137,7 +139,7 @@ const App: React.FC = () => {
           backgroundImage: `url('https://readdy.ai/api/search-image?query=Professional%20book%20marketing%20background%2C%20bookshelves%20with%20modern%20gradient%20overlay%2C%20clean%20minimal%20design%2C%20blue%20and%20purple%20tones&width=1440&height=900&orientation=landscape')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-        }}
+        } }
       >
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-indigo-800/70"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -229,9 +231,19 @@ const App: React.FC = () => {
       </AnimatedSection>
 
       {/* Other sections would continue here... */}
-      <AnimatedSection id="about" className="py-20 bg-white">
+      <AnimatedSection id="about" className=" bg-white">
         <div className="">
           <About />
+        </div>
+      </AnimatedSection>
+      <AnimatedSection id="about" className="">
+        <div className="">
+          <ServicesSection />
+        </div>
+      </AnimatedSection>
+      <AnimatedSection id="about" className="">
+        <div className="">
+          <TeamSection />
         </div>
       </AnimatedSection>
 
