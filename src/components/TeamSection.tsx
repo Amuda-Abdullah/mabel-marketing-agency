@@ -1,8 +1,9 @@
+// components/TeamSection.tsx
 import React from "react";
 import { motion } from "framer-motion";
-import { FaLinkedin, FaTwitter } from "react-icons/fa";
-import { Abdullah } from "../assets";
 import { GoDotFill } from "react-icons/go";
+import { SiGmail } from "react-icons/si";
+import { david, emily, marcus, sarah } from "../assets";
 
 interface TeamMember {
   id: number;
@@ -17,30 +18,30 @@ const TeamSection: React.FC = () => {
     {
       id: 1,
       name: "Sarah Mitchell",
-      image: Abdullah,
+      image: sarah,
       role: "Marketing Strategist",
-      description: "With 8+ years in digital marketing, Sarah specializes in creating data-driven campaigns that deliver exceptional ROI for authors.",
+      description: "With 8+ years in digital marketing, Sarah develops strategies for all our packages ($500-$3,500) to maximize ROI for authors.",
     },
     {
       id: 2,
-      name: "Marcus Chen",
-      image: Abdullah,
+      name: "Marcus Walker",
+      image: marcus,
       role: "Media Buyer",
-      description: "Marcus has managed over $2M in ad spend across Facebook, Amazon, and Google, consistently achieving 3-5x ROAS for book campaigns.",
+      description: "Marcus has managed over $1k in ad spend across Facebook, Amazon, and Google, consistently achieving 3-5x ROAS for book campaigns.",
     },
     {
       id: 3,
       name: "Emily Rodriguez",
-      image: Abdullah,
+      image: emily,
       role: "Book PR Manager",
-      description: "Emily has secured features in major publications and podcasts for dozens of authors, amplifying their reach and credibility.",
+      description: "Emily handles review campaigns and influencer outreach for packages $1,200+, securing features in major publications.",
     },
     {
       id: 4,
       name: "David Thompson",
-      image: Abdullah,
+      image: david,
       role: "Creative Designer",
-      description: "David creates stunning book covers, promotional graphics, and brand identities that capture attention and drive conversions.",
+      description: "David creates stunning visuals for our $1,800+ packages, including book covers and promotional graphics.",
     },
   ];
 
@@ -97,10 +98,7 @@ const TeamSection: React.FC = () => {
                 {/* Social Icons */}
                 <div className="absolute bottom-4 right-4 flex gap-2">
                   <div className="bg-white p-2 rounded-full opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-2 transition-all duration-300 delay-100">
-                    <FaLinkedin className="text-[#d4af37] text-sm" />
-                  </div>
-                  <div className="bg-white p-2 rounded-full opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-2 transition-all duration-300 delay-150">
-                    <FaTwitter className="text-[#d4af37] text-sm" />
+                    <SiGmail className="text-[#d4af37] text-sm" />
                   </div>
                 </div>
               </div>
@@ -120,8 +118,6 @@ const TeamSection: React.FC = () => {
             </motion.div>
           ))}
         </div>
-
-
       </div>
     </section>
   );

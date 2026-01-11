@@ -85,7 +85,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Quick Response</h4>
-                    <p className="text-gray-600">We respond to all inquiries within 24 hours.</p>
+                    <p className="text-gray-600">We respond to all inquiries within 1{" "}hours.</p>
                   </div>
                 </div>
                 
@@ -95,7 +95,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Proven Track Record</h4>
-                    <p className="text-gray-600">500+ successful book campaigns with measurable results.</p>
+                    <p className="text-gray-600">100+ successful book campaigns with measurable results.</p>
                   </div>
                 </div>
                 
@@ -117,11 +117,11 @@ const ContactSection: React.FC = () => {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <FaEnvelope className="text-gray-500" />
-                  <span className="text-gray-700">hello@bookmarketing.com</span>
+                  <span className="text-gray-700">epic.bookmarketing@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <FaPhone className="text-gray-500" />
-                  <span className="text-gray-700">+1 (555) 123-4567</span>
+                  <span className="text-gray-700">+1 (914) 583-2115</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <FaMapMarkerAlt className="text-gray-500" />
@@ -133,11 +133,11 @@ const ContactSection: React.FC = () => {
             {/* Stats */}
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white border border-gray-200 rounded-xl p-4 text-center">
-                <div className="text-2xl font-bold text-gray-900 mb-1">98%</div>
+                <div className="text-2xl font-bold text-gray-900 mb-1">90%</div>
                 <div className="text-sm text-gray-600">Response Rate</div>
               </div>
               <div className="bg-white border border-gray-200 rounded-xl p-4 text-center">
-                <div className="text-2xl font-bold text-gray-900 mb-1">24h</div>
+                <div className="text-2xl font-bold text-gray-900 mb-1">1h</div>
                 <div className="text-sm text-gray-600">Avg. Response Time</div>
               </div>
             </div>

@@ -5,9 +5,7 @@ import {
   FaChartLine,
   FaUserEdit,
   FaRocket,
-  FaLightbulb,
-  FaBullseye,
-  FaHandshake,
+
 } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
 
@@ -36,23 +34,6 @@ const About: React.FC = () => {
     },
   ];
 
-  const principles = [
-    {
-      icon: <FaLightbulb className="text-2xl text-yellow-600" />,
-      title: "Innovation",
-      description: "Staying ahead with cutting-edge marketing techniques",
-    },
-    {
-      icon: <FaBullseye className="text-2xl text-red-600" />,
-      title: "Precision",
-      description: "Targeted strategies for maximum impact",
-    },
-    {
-      icon: <FaHandshake className="text-2xl text-indigo-600" />,
-      title: "Partnership",
-      description: "Working together towards your success",
-    },
-  ];
 
   return (
     <section id="about" className="pt-20 bg-gradient-to-b from-gray-50 to-white">
@@ -82,7 +63,7 @@ const About: React.FC = () => {
         </motion.div>
 
         {/* Main Content */}
-        <div className="flex text-center mx-40">
+        <div className="flex flex-col lg:flex-row lg:space-x-12 mb-16">
           {/* Left Column - Mission Statement */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -91,15 +72,11 @@ const About: React.FC = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-700 leading-relaxed text-center">
               We are a dedicated team of book marketing professionals passionate about helping authors succeed. With over 4 years of experience and 500+ successful campaigns, we understand what it takes to make your book stand out in today's competitive market.
               Our mission is simple: to help you reach more readers, increase sales, and build a loyal fanbase that loves your work. We combine industry expertise with innovative strategies to ensure your book gets the attention it deserves.
             </p>
-            
-          
           </motion.div>
-
-
         </div>
 
         {/* Divider */}

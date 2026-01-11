@@ -1,11 +1,18 @@
 // components/Footer.tsx
 import React from "react";
 import { motion } from "framer-motion";
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaAmazon, FaEnvelope } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import { logo } from "../assets";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const whatsappRedirect = () => {
+    const whatsappNumber = "19145832115";
+    const message = "Hello, I need assistance for my book to get seen!";
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    // In a web app, you typically navigate to the URL
+    window.location.href = whatsappUrl;
+  };
 
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-black text-white">
@@ -32,27 +39,7 @@ const Footer: React.FC = () => {
              
             </motion.div>
 
-            {/* Quick Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-3">
-                {['Home', 'About Us', 'Services', 'Our Team'].map((item) => (
-                  <li key={item}>
-                    <a 
-                      href={`#${item.toLowerCase().replace(' ', '-')}`}
-                      className="text-gray-400 hover:text-white transition-colors duration-300 hover:pl-2 inline-block"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+       
 
             {/* Services */}
             <motion.div
@@ -92,20 +79,9 @@ const Footer: React.FC = () => {
               <div className="space-y-4">
                 {/* Social Media */}
                 <div className="flex gap-4 mb-6">
-                  {[
-                    { icon: <FaFacebook />, color: 'hover:text-blue-500' },
-                    { icon: <FaTwitter />, color: 'hover:text-blue-400' },
-                    { icon: <FaInstagram />, color: 'hover:text-pink-500' },
-                    { icon: <FaLinkedin />, color: 'hover:text-blue-700' },
-                  ].map((social, index) => (
-                    <a
-                      key={index}
-                      href="#"
-                      className={`w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 ${social.color} transition-all duration-300 transform hover:scale-110`}
-                    >
-                      {social.icon}
-                    </a>
-                  ))}
+                 <button onClick={whatsappRedirect} className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-green-500 transition-all duration-300 transform hover:scale-110">
+                    <FaWhatsapp />
+                  </button>
                 </div>
 
                

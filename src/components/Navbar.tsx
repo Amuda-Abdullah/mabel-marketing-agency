@@ -34,6 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Removed "contact" from the navItems array
   const navItems = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
@@ -41,11 +42,15 @@ const Navbar: React.FC<NavbarProps> = ({
     { id: "team", label: "Team" },
     { id: "authors", label: "Authors" },
     { id: "reviews", label: "Reviews" },
-    { id: "contact", label: "Contact" },
   ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleConsultationClick = () => {
+    smoothScrollTo("contact");
+    setIsMenuOpen(false);
   };
 
   return (
@@ -91,17 +96,14 @@ const Navbar: React.FC<NavbarProps> = ({
               </button>
             ))}
             <button
-              onClick={() => {
-                // Add your consultation logic here
-                console.log("Get a Free Consultation clicked");
-              }}
+              onClick={handleConsultationClick}
               className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
                 isScrolled
                   ? "hidden lg:block bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-white px-8 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer"
                   : "hidden lg:block bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-white px-8 py-2 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap cursor-pointer"
               }`}
             >
-              Get a Free Consultation
+              Contact Us
             </button>
           </div>
 
@@ -111,7 +113,7 @@ const Navbar: React.FC<NavbarProps> = ({
               onClick={toggleMenu}
               className={`inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset cursor-pointer ${
                 isScrolled
-                  ? "text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:ring-indigo-500"
+                  ? "text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:ring-yellow-500"
                   : "text-white hover:text-white/80 hover:bg-white/10 focus:ring-white"
               }`}
             >
@@ -147,7 +149,7 @@ const Navbar: React.FC<NavbarProps> = ({
                   }}
                   className={`${
                     activeSection === item.id
-                      ? "bg-indigo-50 text-indigo-600"
+                      ? "bg-yellow-50 text-yellow-600"
                       : "text-gray-700 hover:bg-gray-50"
                   } block w-full px-4 py-3 text-left rounded-md text-sm font-medium transition-colors duration-150`}
                 >
@@ -157,13 +159,10 @@ const Navbar: React.FC<NavbarProps> = ({
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => {
-                  console.log("Mobile consultation clicked");
-                  setIsMenuOpen(false);
-                }}
-                className="block w-full px-4 py-3 bg-indigo-600 text-white text-left rounded-md text-sm font-medium transition-colors duration-150 hover:bg-indigo-700"
+                onClick={handleConsultationClick}
+                className="block w-full px-4 py-3 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-white text-left rounded-md text-sm font-medium transition-colors duration-150 hover:from-[#c19b2e] hover:to-[#e5c03c]"
               >
-                Get a Free Consultation
+                Contact Us
               </motion.button>
             </motion.div>
           </motion.div>

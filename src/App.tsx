@@ -17,6 +17,7 @@ import AuthorsSection from "./components/AuthorSection";
 import ReviewsSection from "./components/ReviewSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import HeroSection from "./components/HeroSection";
 
 /**
  * Reusable animated section component.
@@ -136,103 +137,7 @@ const App: React.FC = () => {
       />
 
       {/* Hero Section */}
-      <AnimatedSection
-        id="home"
-        className="min-h-screen flex items-center relative overflow-hidden"
-        style={{
-          backgroundImage: `url('https://readdy.ai/api/search-image?query=Professional%20book%20marketing%20background%2C%20bookshelves%20with%20modern%20gradient%20overlay%2C%20clean%20minimal%20design%2C%20blue%20and%20purple%20tones&width=1440&height=900&orientation=landscape')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        } }
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-indigo-800/70"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Main Content */}
-            <div className="space-y-8">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-                <span className="block">We Help Authors</span>
-                <span className="block text-blue-300">Sell More Books &</span>
-                <span className="block">Build Loyal Readers.</span>
-              </h1>
-              
-              <p className="text-xl text-blue-100 max-w-2xl">
-                Professional Book Marketing, Promotion, Branding & Visibility on Amazon, Kindle & Social Media.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button
-                  onClick={() => smoothScrollTo("services")}
-                  className="bg-white text-blue-900 hover:bg-blue-100 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  Start Marketing My Book
-                </button>
-                <button
-                  onClick={() => smoothScrollTo("reviews")}
-                  className="bg-transparent border-2 border-white hover:bg-white/10 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300"
-                >
-                  View Success Stories
-                </button>
-              </div>
-            </div>
-
-            {/* Right Column - Stats */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20">
-              <div className="space-y-8">
-                {/* Amazon Partner Badge */}
-                <div className="flex items-center gap-4 bg-white/20 rounded-2xl p-6">
-                  <div className="bg-white p-3 rounded-xl">
-                    <FaAmazon className="text-4xl text-blue-900" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">Amazon Partner</h3>
-                    <p className="text-blue-200">Official Marketing Partner</p>
-                  </div>
-                </div>
-
-                {/* Stats */}
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center bg-white/10 rounded-2xl p-6">
-                    <div className="text-4xl font-bold text-white mb-2 flex items-center justify-center gap-2">
-                      <FaUsers />
-                      500+
-                    </div>
-                    <div className="text-blue-200 font-medium">Authors Helped</div>
-                  </div>
-                  <div className="text-center bg-white/10 rounded-2xl p-6">
-                    <div className="text-4xl font-bold text-white mb-2 flex items-center justify-center gap-2">
-                      <FaStar />
-                      4.9+
-                    </div>
-                    <div className="text-blue-200 font-medium">Rating</div>
-                  </div>
-                </div>
-
-                {/* Testimonial Preview */}
-                <div className="bg-white/20 rounded-2xl p-6">
-                  <p className="italic text-lg text-white mb-4">"They transformed my book from unnoticed to bestseller in just 3 months!"</p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-blue-300 rounded-full"></div>
-                    <div>
-                      <div className="font-semibold text-white">Sarah Johnson</div>
-                      <div className="text-blue-200 text-sm">Bestselling Author</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <div className="animate-bounce">
-            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
-            </div>
-          </div>
-        </div>
-      </AnimatedSection>
+          <HeroSection smoothScrollTo={smoothScrollTo} />
 
       {/* Other sections would continue here... */}
       <AnimatedSection id="about" className=" bg-white">
