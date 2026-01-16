@@ -1,5 +1,5 @@
 // components/AuthorsSection.tsx
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GoDotFill } from "react-icons/go";
 

@@ -3,12 +3,10 @@
 import React, { useState, useEffect } from "react";
 import {
   motion,
-  AnimatePresence,
   useInView,
   useAnimation,
   easeOut,
 } from "framer-motion";
-import { FaAmazon, FaStar, FaUsers, FaBookOpen } from "react-icons/fa";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import ServicesSection from "./components/ServiceSection";
