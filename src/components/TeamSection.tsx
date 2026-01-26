@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { GoDotFill } from "react-icons/go";
 import { SiGmail } from "react-icons/si";
-import { david, emily, marcus, sarah } from "../assets";
+import { david, deborah, emily, marcus, sarah } from "../assets";
 
 interface TeamMember {
   id: number;
@@ -42,6 +42,13 @@ const TeamSection: React.FC = () => {
       image: david,
       role: "Creative Designer",
       description: "David creates stunning visuals for our $1,800+ packages, including book covers and promotional graphics.",
+    },
+    {
+      id: 5,
+      name: "Deborah Olanrewaju",
+      image: deborah,
+      role: "Finance Manager",
+      description: "Deborah manages all financial aspects of our campaigns, ensuring optimal budget allocation and ROI for every package.",
     },
   ];
 
