@@ -1,27 +1,4 @@
-/**
- * SpeedInsights from @vercel/speed-insights/react is used to monitor and report
- * web performance metrics (Core Web Vitals) to Vercel Analytics.
- * 
- * To use this import, add the `<SpeedInsights />` component to your App.tsx JSX:
- * 
- * @example
- * ```tsx
- * return (
- *   <div className="font-sans min-h-screen bg-gray-50 text-gray-800">
- *     <Navbar {...props} />
- *     <HeroSection {...props} />
- *     {/* Other sections */}
- *     <Footer />
- *     <SpeedInsights />
- *   </div>
- * );
- * ```
- * 
- * Typically, place it at the end of your root component, just before the closing tag.
- * No props are required - it works automatically to collect performance data.
- */
-// App.tsx
-/* eslint-disable react-hooks/rules-of-hooks */
+
 import React, { useState, useEffect } from "react";
 import {
   motion,
@@ -31,7 +8,7 @@ import {
 } from "framer-motion";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
-import { SpeedInsights } from "@vercel/speed-insights/react";
+
 import ServicesSection from "./components/ServiceSection";
 import TeamSection from "./components/TeamSection";
 import AuthorsSection from "./components/AuthorSection";
@@ -40,9 +17,6 @@ import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 
-/**
- * Reusable animated section component.
- */
 const AnimatedSection: React.FC<
   React.PropsWithChildren<{
     id?: string;
@@ -149,7 +123,6 @@ const App: React.FC = () => {
 
   return (
     <div className="font-sans min-h-screen bg-gray-50 text-gray-800">
-      {/* Navigation */}
       <Navbar
         activeSection={activeSection}
         smoothScrollTo={smoothScrollTo}
@@ -191,9 +164,7 @@ const App: React.FC = () => {
           <ContactSection />
         </div>
       </AnimatedSection>
-
 <Footer />
-      {/* Continue with Services, Team, Authors, Reviews, Contact sections... */}
     </div>
   );
 };
