@@ -1,3 +1,25 @@
+/**
+ * SpeedInsights from @vercel/speed-insights/react is used to monitor and report
+ * web performance metrics (Core Web Vitals) to Vercel Analytics.
+ * 
+ * To use this import, add the `<SpeedInsights />` component to your App.tsx JSX:
+ * 
+ * @example
+ * ```tsx
+ * return (
+ *   <div className="font-sans min-h-screen bg-gray-50 text-gray-800">
+ *     <Navbar {...props} />
+ *     <HeroSection {...props} />
+ *     {/* Other sections */}
+ *     <Footer />
+ *     <SpeedInsights />
+ *   </div>
+ * );
+ * ```
+ * 
+ * Typically, place it at the end of your root component, just before the closing tag.
+ * No props are required - it works automatically to collect performance data.
+ */
 // App.tsx
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, useEffect } from "react";
@@ -9,6 +31,7 @@ import {
 } from "framer-motion";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import ServicesSection from "./components/ServiceSection";
 import TeamSection from "./components/TeamSection";
 import AuthorsSection from "./components/AuthorSection";
