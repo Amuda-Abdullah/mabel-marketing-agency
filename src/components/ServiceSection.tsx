@@ -3,19 +3,18 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   FaRocket,
+  FaChartLine,
+  FaCrown,
+  FaStar,
   FaChevronRight,
   FaCheck,
-  FaStar,
-  FaChartLine,
   FaUsers,
-  FaBook,
-  FaBullhorn,
-  FaChartBar,
-  FaHeadset,
-  FaCalendarAlt,
-  FaHandshake,
+  FaBullseye,
+  FaTrophy,
+  FaGem,
 } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
+import { FaAccessibleIcon } from "react-icons/fa6";
 
 interface Service {
   id: number;
@@ -24,10 +23,9 @@ interface Service {
   tagline: string;
   description: string;
   price: string;
-  originalPrice?: string;
   duration: string;
   features: string[];
-  highlight?: string;
+  category: string;
   popular?: boolean;
   ctaText?: string;
 }
@@ -39,125 +37,163 @@ const ServicesSection: React.FC = () => {
   const services: Service[] = [
     {
       id: 1,
-      icon: <FaBook className="text-2xl" />,
-      title: "Visibility Launch Package",
-      tagline: "Perfect for New Releases",
-      description:
-        "Kickstart your book's journey with targeted visibility across Amazon, Goodreads, and key reader communities. Build momentum from day one.",
-      price: "$700",
-      originalPrice: "$900",
-      duration: "30-Day Campaign",
+      icon: <FaRocket className="text-2xl" />,
+      title: "Starter Launch",
+      tagline: "Perfect for new authors testing the waters",
+      description: "Get your book off the ground with essential marketing basics and initial reader engagement.",
+      price: "$250",
+      duration: "Basic Campaign",
       features: [
-        "Complete Amazon SEO & Keyword Optimization",
-        "Targeted promotion in 10+ reader/genre groups (2 weeks)",
-        "Listing in weekly book discovery posts",
-        "Basic Goodreads & Amazon engagement (likes, adds)",
-        "Amazon category placement optimization",
-        "Mini strategy roadmap for ongoing growth",
+        "Basic Book Audit",
+        "10-15 Goodreads reviews from real readers",
+        "1 week social media posts (3-4 posts)",
+        "Basic email announcement template",
+        "Goodreads Listopia listings (up to 10 lists)",
+        "Campaign performance report"
       ],
-      ctaText: "Launch My Book",
+      category: "budget",
+      ctaText: "Start Basic",
     },
     {
       id: 2,
-      icon: <FaBullhorn className="text-2xl" />,
-      title: "Community Growth Package",
-      tagline: "Build Your Reader Community",
-      description:
-        "Expand your reach and build genuine connections with readers. Perfect for authors looking to establish a loyal following.",
-      price: "$1,200",
-      originalPrice: "$1,500",
-      duration: "45-Day Campaign",
+      icon: <FaChartLine className="text-2xl" />,
+      title: "Growth Accelerator",
+      tagline: "Build momentum and consistency",
+      description: "Expand your reach with more comprehensive marketing and consistent social media presence.",
+      price: "$500",
+      duration: "2-Week Campaign",
       features: [
-        "All Visibility Launch features",
-        "Extended promotion across 20+ groups (4 weeks)",
-        "Outreach to niche reader communities",
-        "Two personalized social media shoutouts",
-        "Goodreads Listopia placement (15-20 lists)",
-        "70-100 authentic review campaign",
+        "2 weeks social media (10-12 posts)",
+        "Readers and influencer outreach",
+        "20-30 Goodreads reviews from real readers",
+        "Email campaign (2 emails)",
+        "Goodreads Listopia listings (up to 15 lists)",
+        "Campaign performance report"
       ],
+      category: "budget",
       popular: true,
-      highlight: "Most Popular",
-      ctaText: "Grow My Audience",
+      ctaText: "Accelerate Growth",
     },
     {
       id: 3,
-      icon: <FaChartBar className="text-2xl" />,
-      title: "Strategic Impact Package",
-      tagline: "Drive Consistent Sales",
-      description:
-        "Comprehensive marketing for sustained growth. Includes influencer outreach and detailed performance tracking.",
-      price: "$1,800",
-      originalPrice: "$2,200",
-      duration: "60-Day Campaign",
+      icon: <FaBullseye className="text-2xl" />,
+      title: "Professional Campaign",
+      tagline: "Comprehensive marketing for serious authors",
+      description: "Full-scale marketing with targeted outreach and professional content strategy.",
+      price: "$750",
+      duration: "3-Week Campaign",
       features: [
-        "All Community Growth features",
-        "8 weeks of sustained marketing exposure",
-        "Featured placement in curated 'recommended reads' lists",
-        "Email outreach to book bloggers & influencers",
-        "Social media content kit (images, captions, hashtags)",
-        "Monthly visibility report with engagement insights",
+        "Everything in Growth Accelerator, plus:",
+        "Targeted promotion in high traffic communities",
+        "2-3 weeks social media (20 posts)",
+        "35-40 Goodreads reviews from real readers",
+        "Book blogger outreach (15-20 contacts)",
+        "Email campaign (reads list)",
+        "Goodreads Listopia listings (up to 25 lists)"
       ],
-      ctaText: "Maximize Sales",
+      category: "popular",
+      ctaText: "Go Professional",
     },
     {
       id: 4,
-      icon: <FaHeadset className="text-2xl" />,
-      title: "Elite 90-Day Program",
-      tagline: "Full-Scale Marketing Strategy",
-      description:
-        "Our most comprehensive package with weekly support, seasonal promotions, and personalized engagement strategies.",
-      price: "$2,800",
-      originalPrice: "$3,500",
-      duration: "90-Day Program",
+      icon: <FaTrophy className="text-2xl" />,
+      title: "Bestseller Blueprint",
+      tagline: "Strategic launch for maximum visibility",
+      description: "Designed to push your book toward bestseller status with verified reviews and extensive outreach.",
+      price: "$1,000",
+      duration: "4-Week Campaign",
       features: [
-        "All Strategic Impact features",
-        "Full 90-Day Visibility & Engagement Plan",
-        "Weekly targeted outreach to readers & reviewers",
-        "Coordinated seasonal promotions aligned with trends",
-        "Personalized reader engagement strategy (Q&As, giveaways)",
-        "Bi-weekly progress reports with strategy adjustments",
+        "3-4 weeks social media (30 posts)",
+        "2-3 Verified Amazon reviews",
+        "Blogger outreach (30-40 contacts)",
+        "40-50 Goodreads reviews from real readers",
+        "Full targeted email campaign",
+        "Goodreads Listopia listings (up to 35 lists)",
+        "Custom Amazon QR code mockup"
       ],
-      highlight: "Premium Choice",
-      ctaText: "Go Elite",
+      category: "popular",
+      popular: true,
+      ctaText: "Blueprint Success",
     },
     {
       id: 5,
-      icon: <FaCalendarAlt className="text-2xl" />,
-      title: "Seasonal Promotion Package",
-      tagline: "Holiday & Seasonal Campaigns",
-      description:
-        "Time-sensitive campaigns designed to capitalize on seasonal trends and holiday shopping spikes.",
-      price: "$500",
-      duration: "2-4 Week Campaign",
+      icon: <FaCrown className="text-2xl" />,
+      title: "Authority Platform",
+      tagline: "Build a lasting author brand",
+      description: "Establish yourself as an authority in your genre with comprehensive brand building.",
+      price: "$1,500",
+      duration: "6-Week Campaign",
       features: [
-        "Seasonal/holiday optimized campaign strategy",
-        "Promotion in holiday-themed reader groups",
-        "Festival/holiday social media integration",
-        "Limited-time discount promotion strategy",
-        "Holiday email marketing campaign",
-        "Post-campaign performance report",
+        "Everything in Bestseller Blueprint, plus:",
+        "4-6 weeks social media (45 posts)",
+        "5-7 Verified Amazon reviews",
+        "Short book trailer for quick attention grab",
+        "70+ Goodreads reviews from real readers",
+        "Custom Amazon QR code mockup",
+        "Enhanced campaign performance analysis"
       ],
-      ctaText: "Seasonal Boost",
+      category: "premium",
+      ctaText: "Build Authority",
     },
     {
       id: 6,
-      icon: <FaHandshake className="text-2xl" />,
-      title: "Bestseller Acceleration",
-      tagline: "For Established Authors",
-      description:
-        "Advanced strategies for authors with existing platforms looking to hit bestseller lists and maximize backlist sales.",
-      price: "$3,500",
-      duration: "Custom 120-Day Program",
+      icon: <FaGem className="text-2xl" />,
+      title: "Premium Launch System",
+      tagline: "Full-service marketing for ambitious authors",
+      description: "Complete marketing ecosystem for authors ready to dominate their genre.",
+      price: "$2,000",
+      duration: "8-Week Campaign",
       features: [
-        "Complete market analysis & competitor research",
-        "Bestseller list targeting strategy",
-        "Advanced Amazon advertising campaign",
-        "Media & press release distribution",
-        "Book tour & virtual event coordination",
-        "Quarterly strategy review & optimization",
+        "Everything in Authority Platform, plus:",
+        "7-8 weeks social media (45 posts)",
+        "10+ Verified Amazon reviews",
+        "Professional book trailer",
+        "90+ Goodreads reviews from real readers",
+        "Complete sales funnel",
+        "Advanced campaign optimization"
       ],
-      highlight: "Enterprise Level",
-      ctaText: "Aim for #1",
+      category: "premium",
+      ctaText: "Launch Premium",
+    },
+    {
+      id: 7,
+      icon: <FaAccessibleIcon className="text-2xl" />,
+      title: "Ultimate Author Accelerator",
+      tagline: "The complete author success package",
+      description: "All-inclusive marketing and branding for authors serious about long-term success.",
+      price: "$2,500",
+      duration: "12-Week Campaign",
+      features: [
+        "Everything in Premium Launch, plus:",
+        "10 weeks social media (45 posts)",
+        "20+ Verified Amazon reviews",
+        "100+ Goodreads reviews from real readers",
+        "Custom Amazon QR code mockup",
+        "Campaign performance result"
+      ],
+      category: "Ultimate Package",
+      ctaText: "Accelerate Now",
+    },
+    {
+      id: 8,
+      icon: <FaStar className="text-2xl" />,
+      title: "Legendary Package",
+      tagline: "Best seller achiever",
+      description: "The ultimate package for authors aiming to become bestsellers.",
+      price: "$5,000",
+      duration: "15-Week Campaign",
+      features: [
+        "Everything in Premium Launch, plus:",
+        "20 weeks social media (45 posts)",
+        "50+ Verified Amazon reviews",
+        "250+ Goodreads reviews from real readers",
+        "Custom Amazon QR code mockup",
+        "Campaign performance result",
+        "Author website/rebranding",
+        "Free book trailer",
+      ],
+      category: "Ultimate Package",
+      ctaText: "Become a Legend",
     },
   ];
 
@@ -165,22 +201,19 @@ const ServicesSection: React.FC = () => {
     { icon: <FaChartLine />, number: "85%", label: "Sales Increase" },
     { icon: <FaStar />, number: "4.9", label: "Client Rating" },
     { icon: <FaUsers />, number: "500+", label: "Authors Helped" },
-    { icon: <FaRocket />, number: "200+", label: "Bestsellers" },
+    { icon: <FaTrophy />, number: "200+", label: "Bestsellers" },
   ];
 
   const tabs = [
     { id: "all", label: "All Packages" },
-    { id: "budget", label: "Budget-Friendly" },
-    { id: "popular", label: "Most Popular" },
-    { id: "premium", label: "Premium" },
+    { id: "budget", label: "Starter Packages" },
+    { id: "popular", label: "Popular Choice" },
+    { id: "premium", label: "Premium Plans" },
   ];
 
   const filteredServices = services.filter((service) => {
     if (activeTab === "all") return true;
-    if (activeTab === "budget") return Number(service.price.replace("$", "").replace(",", "")) <= 1000;
-    if (activeTab === "popular") return service.popular;
-    if (activeTab === "premium") return Number(service.price.replace("$", "").replace(",", "")) > 1800;
-    return true;
+    return service.category === activeTab;
   });
 
   return (
@@ -202,7 +235,7 @@ const ServicesSection: React.FC = () => {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-700">
-              Strategic Marketing Packages
+              Book Marketing Packages
             </span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-10">
@@ -270,28 +303,13 @@ const ServicesSection: React.FC = () => {
               onMouseLeave={() => setHoveredCard(null)}
               className={`relative bg-white rounded-2xl p-6 shadow-lg border border-gray-200 hover:shadow-2xl transition-all duration-300 ${
                 service.popular ? "ring-2 ring-amber-500" : ""
-              } ${service.highlight === "Enterprise Level" ? "border-2 border-purple-300" : ""}`}
+              }`}
             >
-              {/* Highlight Badge */}
-              {service.highlight && (
+              {/* Popular Badge */}
+              {service.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <div className={`px-4 py-1 rounded-full text-sm font-semibold shadow-lg ${
-                    service.highlight === "Most Popular"
-                      ? "bg-gradient-to-r from-amber-500 to-yellow-500 text-white"
-                      : service.highlight === "Premium Choice"
-                      ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white"
-                      : "bg-gradient-to-r from-gray-800 to-gray-900 text-white"
-                  }`}>
-                    {service.highlight}
-                  </div>
-                </div>
-              )}
-
-              {/* Original Price */}
-              {service.originalPrice && (
-                <div className="absolute -top-3 right-4">
-                  <div className="text-xs text-gray-500 line-through bg-white px-2 py-1 rounded">
-                    {service.originalPrice}
+                  <div className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    Most Popular
                   </div>
                 </div>
               )}
@@ -315,11 +333,6 @@ const ServicesSection: React.FC = () => {
                     <div className="text-2xl font-bold text-gray-900">{service.price}</div>
                     <div className="text-xs text-gray-500">{service.duration}</div>
                   </div>
-                  {service.originalPrice && (
-                    <div className="text-xs text-green-600 font-semibold bg-green-50 px-2 py-1 rounded">
-                      Save ${Number(service.originalPrice.replace("$", "")) - Number(service.price.replace("$", ""))}
-                    </div>
-                  )}
                 </div>
               </div>
 
@@ -337,9 +350,6 @@ const ServicesSection: React.FC = () => {
               {/* CTA Button */}
               <button
                 onClick={() => {
-                  // This would typically open a contact form or booking modal
-                  console.log(`Selected package: ${service.title}`);
-                  // You can replace this with your actual booking logic
                   const element = document.getElementById('contact');
                   if (element) {
                     element.scrollIntoView({ behavior: 'smooth' });
@@ -348,8 +358,6 @@ const ServicesSection: React.FC = () => {
                 className={`w-full py-3 px-4 rounded-xl font-semibold transition-all duration-300 transform group relative overflow-hidden ${
                   hoveredCard === service.id || service.popular
                     ? "bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 text-white shadow-lg"
-                    : service.highlight === "Enterprise Level"
-                    ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:shadow-lg"
                     : "bg-white border-2 border-gray-800 text-gray-800 hover:shadow-md"
                 }`}
               >
@@ -375,6 +383,54 @@ const ServicesSection: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Custom Package Section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <div className="relative z-10">
+              <div className="inline-flex items-center justify-center gap-2 mb-4">
+                <FaStar className="text-amber-400" />
+                <h3 className="text-2xl md:text-3xl font-bold text-white">
+                  Looking for Custom Pricing?
+                </h3>
+                <FaStar className="text-amber-400" />
+              </div>
+              <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+                For packages beyond $2,500 or completely custom solutions, schedule a consultation 
+                to discuss your specific needs and budget.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                  onClick={() => {
+                    const element = document.getElementById('contact');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="group relative px-8 py-4 bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 text-white rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    <FaCrown />
+                    Request Custom Quote
+                  </span>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "100%" }}
+                    transition={{ duration: 0.6 }}
+                  />
+                </button>
+               
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
