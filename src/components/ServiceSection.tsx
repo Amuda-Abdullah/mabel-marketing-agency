@@ -91,7 +91,7 @@ const ServicesSection: React.FC = () => {
         "Email campaign (reads list)",
         "Goodreads Listopia listings (up to 25 lists)"
       ],
-      category: "popular",
+      category: "budget",
       ctaText: "Go Professional",
     },
     {
@@ -132,7 +132,7 @@ const ServicesSection: React.FC = () => {
         "Custom Amazon QR code mockup",
         "Enhanced campaign performance analysis"
       ],
-      category: "premium",
+      category: "popular",
       ctaText: "Build Authority",
     },
     {
@@ -171,7 +171,8 @@ const ServicesSection: React.FC = () => {
         "Custom Amazon QR code mockup",
         "Campaign performance result"
       ],
-      category: "Ultimate Package",
+      category: "premium",
+      popular: true,
       ctaText: "Accelerate Now",
     },
     {
@@ -192,7 +193,7 @@ const ServicesSection: React.FC = () => {
         "Author website/rebranding",
         "Free book trailer",
       ],
-      category: "Ultimate Package",
+      category: "premium",
       ctaText: "Become a Legend",
     },
   ];
